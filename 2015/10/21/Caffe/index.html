@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>深度学习入门记（一） | 梦想四季的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作为一名不知名大学的水硕一枚，了解CV和DL差不多也有一年的时间。期间走过很多的弯路，也遇到过很多挫折，但是感谢网络上的大神们的无私，让我从中获益良多。深度学习近年来相当热，同行人有一句话是这样说的，无GPU，不DL。设想如果一个没有GPU等硬件条件的话你去搞DL那简直是无法想象！然而我却是这样的一个人。究其原因，也是没有办法的办法啊。实验室没有这样的条件，也没钱买设备。电脑都是无GPU的。有时候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习入门记（一）">
+<meta property="og:url" content="http://yoursite.com/2015/10/21/Caffe/index.html">
+<meta property="og:site_name" content="梦想四季的博客">
+<meta property="og:description" content="作为一名不知名大学的水硕一枚，了解CV和DL差不多也有一年的时间。期间走过很多的弯路，也遇到过很多挫折，但是感谢网络上的大神们的无私，让我从中获益良多。深度学习近年来相当热，同行人有一句话是这样说的，无GPU，不DL。设想如果一个没有GPU等硬件条件的话你去搞DL那简直是无法想象！然而我却是这样的一个人。究其原因，也是没有办法的办法啊。实验室没有这样的条件，也没钱买设备。电脑都是无GPU的。有时候">
+<meta property="og:updated_time" content="2015-10-21T12:01:11.896Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深度学习入门记（一）">
+<meta name="twitter:description" content="作为一名不知名大学的水硕一枚，了解CV和DL差不多也有一年的时间。期间走过很多的弯路，也遇到过很多挫折，但是感谢网络上的大神们的无私，让我从中获益良多。深度学习近年来相当热，同行人有一句话是这样说的，无GPU，不DL。设想如果一个没有GPU等硬件条件的话你去搞DL那简直是无法想象！然而我却是这样的一个人。究其原因，也是没有办法的办法啊。实验室没有这样的条件，也没钱买设备。电脑都是无GPU的。有时候">
+  
+    <link rel="alternative" href="/atom.xml" title="梦想四季的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/my.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">梦想四季</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">有非常之胆识，才可做非常之事业</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/categories/随笔">随笔</a></li>
+				        
+							<li><a href="/categories/生活">生活</a></li>
+				        
+							<li><a href="/categories/学习">学习</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://github.com/lgbwust" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/lgbwust" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="http://zhihu.com/people/lgbwust" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Caffe/" style="font-size: 10px;">Caffe</a> <a href="/tags/DL/" style="font-size: 10px;">DL</a> <a href="/tags/学车/" style="font-size: 10px;">学车</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/驾校/" style="font-size: 10px;">驾校</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://weibo.com">新浪微博</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是一只小小鸟~~~</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">梦想四季</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/my.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">梦想四季</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">有非常之胆识，才可做非常之事业</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/categories/随笔">随笔</a></li>
+		        
+					<li><a href="/categories/生活">生活</a></li>
+		        
+					<li><a href="/categories/学习">学习</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://github.com/lgbwust" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/lgbwust" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="http://zhihu.com/people/lgbwust" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Caffe" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/21/Caffe/" class="article-date">
+  	<time datetime="2015-10-21T11:58:27.000Z" itemprop="datePublished">2015-10-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      深度学习入门记（一）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Caffe/">Caffe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DL/">DL</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习/">学习</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>作为一名不知名大学的水硕一枚，了解CV和DL差不多也有一年的时间。期间走过很多的弯路，也遇到过很多挫折，但是感谢网络上的大神们的无私，让我从中获益良多。深度学习近年来相当热，同行人有一句话是这样说的，无GPU，不DL。设想如果一个没有GPU等硬件条件的话你去搞DL那简直是无法想象！然而我却是这样的一个人。究其原因，也是没有办法的办法啊。实验室没有这样的条件，也没钱买设备。电脑都是无GPU的。有时候真的挺无奈的。可是换个方向一想，也就那样了。曾经在群里有个人这样说过：如果你的导师花了大钱给你配了一个不错的GPU，结果你却什么成果都没有，那不简直要被骂死的节奏么！哈哈，开玩笑的啦。<a id="more"></a></p>
+<hr>
+<p>下面就讲讲自己的DL之路吧。<br>DL是一个相对较新的东西，学校里基本就没有什么人在搞，导师也是在摸索中前进。一开始我是真的不知道该如何下手。只能够靠网络了。百度CNN，结果就出来了一个matlab深度学习工具箱。</p>
+<blockquote>
+<p>哇，这个工具箱好高大上啊！还是一个本科毕业生的毕设。<br>运行的程序的demo当然就是Mnist数据集啦。<br>感觉不错，怎么只能跑这个，还是灰度图像。简直了！<br>我还花了大量力气用这个toolbox运行cifar10。现在想想我也是蛮拼滴！</p>
+</blockquote>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% function test_example_CNN</span></span><br><span class="line">load mnist_uint8;</span><br><span class="line"><span class="keyword">global</span> useGpu;</span><br><span class="line"></span><br><span class="line">train_x = double(<span class="built_in">reshape</span>(train_x<span class="operator">'</span>,<span class="number">28</span>,<span class="number">28</span>,<span class="number">60000</span>))/<span class="number">255</span>;</span><br><span class="line">test_x = double(<span class="built_in">reshape</span>(test_x<span class="operator">'</span>,<span class="number">28</span>,<span class="number">28</span>,<span class="number">10000</span>))/<span class="number">255</span>;</span><br><span class="line">train_y = double(train_y<span class="operator">'</span>);</span><br><span class="line">test_y = double(test_y<span class="operator">'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% ex1 Train a 6c-2s-12c-2s Convolutional neural network </span></span><br><span class="line"><span class="comment">%will run 1 epoch in about 200 second and get around 11% error. </span></span><br><span class="line"><span class="comment">%With 100 epochs you'll get around 1.2% error</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">rand</span>(<span class="string">'state'</span>,<span class="number">0</span>)</span><br><span class="line">clear cnn;</span><br><span class="line">cnn.layers = <span class="cell">&#123;</span><br><span class="line">    struct(<span class="string">'type'</span>, <span class="string">'i'</span>) %input layer</span><br><span class="line">    struct(<span class="string">'type'</span>, <span class="string">'c'</span>, <span class="string">'outputmaps'</span>, <span class="number">6</span>, <span class="string">'kernelsize'</span>, <span class="number">6</span>, <span class="string">'activation'</span>, <span class="string">'ReLU'</span>) %convolution layer</span><br><span class="line">    struct(<span class="string">'type'</span>, <span class="string">'s'</span>, <span class="string">'scale'</span>, <span class="number">2</span>, <span class="string">'method'</span>, <span class="string">'m'</span>) %sub sampling layer <span class="string">'m'</span>:maxpooling; <span class="string">'a'</span>:average pooling; <span class="string">'s'</span>:stochastic pooling</span><br><span class="line">%     struct(<span class="string">'type'</span>, <span class="string">'c'</span>, <span class="string">'outputmaps'</span>, <span class="number">12</span>, <span class="string">'kernelsize'</span>, <span class="number">5</span>, <span class="string">'activation'</span>, <span class="string">'ReLU'</span>) %convolution layer</span><br><span class="line">%     struct(<span class="string">'type'</span>, <span class="string">'s'</span>, <span class="string">'scale'</span>, <span class="number">2</span>, <span class="string">'method'</span>, <span class="string">'m'</span>) %subsampling layer</span><br><span class="line">&#125;</span>;</span><br><span class="line">debug =true;</span><br><span class="line"><span class="keyword">if</span> debug</span><br><span class="line">    opts.alpha = <span class="number">1</span>;</span><br><span class="line">    opts.batchsize = <span class="number">10</span>;</span><br><span class="line">    opts.numepochs = <span class="number">1</span>;</span><br><span class="line">    cnn = cnnsetup(cnn, train_x(:,:,<span class="number">1</span>:<span class="number">10</span>), train_y(:,<span class="number">1</span>:<span class="number">10</span>));</span><br><span class="line"><span class="comment">%     cnn = cnntrain(cnn, train_x(:,:,1:10), train_y(:,1:10), opts);</span></span><br><span class="line">    cnnnumgradcheck(cnn, train_x(:,:,<span class="number">1</span>:<span class="number">10</span>), train_y(:,<span class="number">1</span>:<span class="number">10</span>));</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"></span><br><span class="line">opts.alpha = <span class="number">1</span>;</span><br><span class="line">opts.batchsize = <span class="number">50</span>;</span><br><span class="line">opts.numepochs = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">cnn = cnnsetup(cnn, train_x, train_y);</span><br><span class="line">cnn = cnntrain(cnn, train_x, train_y, opts);</span><br><span class="line"></span><br><span class="line"><span class="matrix">[er, bad]</span> = cnntest(cnn, test_x, test_y);</span><br><span class="line"></span><br><span class="line"><span class="comment">%plot mean squared error</span></span><br><span class="line">figure; plot(cnn.rL);</span><br><span class="line">assert(er&lt;<span class="number">0.12</span>, <span class="string">'Too big error'</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>结果可想而知，准确率实在感人。<br>接着我又一直找啊找，找了一大堆matlab,python代码，可以都是没有什么太大的进展。<br>期间，我试过<a href="http://www.vlfeat.org/matconvnet/" target="_blank" rel="external">MatConvnet</a>,哇感觉不错，也有不少的例子，可是呢，我除了例子我不知道该怎么用自己的dataset,再加上没有GPU，matlab效率又太低，简直不敢想。怎么办呢，想到了<a href="http://caffe.berkeleyvision.org/" target="_blank" rel="external">Caffe</a>，那问题又来了。别人都是GTX980ti,Titian X及以上的显卡，而我什么都没有。我也不是没有配过caffe，但是失败了。当我再一次想起Caffe的时候，用到了<a href="https://github.com/happynear/caffe-windows" target="_blank" rel="external">happynear-Caffe_windows</a>这个。虽然没有GPU，但还是成功了。但这是不是意味着就可以开始了? NO，远远没有开始。我又遇到了同样的问题，没有GPU事小，我还是不知道怎么用自己的数据集训练，训练结果只有<strong>accuracy</strong>，该怎么用model对我来说又是一个巨大的问题。这些我想放在后面再写，这里，我先放一些log<br>Cifar10的log<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I0805 17:16:22.139529  3164 net.cpp:248] Memory required for data: 88974128&#10;I0805 17:16:22.140528  3164 solver.cpp:42] Solver scaffolding done.&#10;I0805 17:16:22.140528  3164 solver.cpp:250] Solving CaffeNet&#10;I0805 17:16:22.140528  3164 solver.cpp:251] Learning Rate Policy: step&#10;I0805 17:16:22.262542  3164 solver.cpp:294] Iteration 0, Testing net (#0)&#10;I0805 17:16:37.326541  3164 solver.cpp:343]     Test net output #0: accuracy = 0.085&#10;I0805 17:16:37.327533  3164 solver.cpp:343]     Test net output #1: loss = 3.76392 (* 1 = 3.76392 loss)&#10;I0805 17:16:39.253532  3164 solver.cpp:214] Iteration 0, loss = 2.44587&#10;I0805 17:16:39.253532  3164 solver.cpp:229]     Train net output #0: loss = 2.44587 (* 1 = 2.44587 loss)&#10;I0805 17:16:39.254533  3164 solver.cpp:486] Iteration 0, lr = 0.001&#10;I0805 17:17:22.728545  3164 solver.cpp:214] Iteration 20, loss = 5.74343&#10;I0805 17:17:22.728545  3164 solver.cpp:229]     Train net output #0: loss = 5.74343 (* 1 = 5.74343 loss)&#10;I0805 17:17:22.729545  3164 solver.cpp:486] Iteration 20, lr = 0.001&#10;I0805 17:18:05.551559  3164 solver.cpp:214] Iteration 40, loss = 2.88074&#10;I0805 17:18:05.552556  3164 solver.cpp:229]     Train net output #0: loss = 2.88074 (* 1 = 2.88074 loss)&#10;I0805 17:18:05.552556  3164 solver.cpp:486] Iteration 40, lr = 0.001&#10;I0805 17:18:48.381570  3164 solver.cpp:214] Iteration 60, loss = 3.55146&#10;I0805 17:18:48.382570  3164 solver.cpp:229]     Train net output #0: loss = 3.55146 (* 1 = 3.55146 loss)&#10;I0805 17:18:48.383569  3164 solver.cpp:486] Iteration 60, lr = 0.001&#10;I0805 17:19:30.568583  3164 solver.cpp:214] Iteration 80, loss = 2.15266&#10;I0805 17:19:30.569582  3164 solver.cpp:229]     Train net output #0: loss = 2.15266 (* 1 = 2.15266 loss)&#10;I0805 17:19:30.569582  3164 solver.cpp:486] Iteration 80, lr = 0.001&#10;I0805 17:20:13.094594  3164 solver.cpp:214] Iteration 100, loss = 3.1185&#10;I0805 17:20:13.095592  3164 solver.cpp:229]     Train net output #0: loss = 3.1185 (* 1 = 3.1185 loss)</span><br></pre></td></tr></table></figure></p>
+<p>还是cifar10的log<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I0828 14:24:12.793092  5492 solver.cpp:294] Iteration 0, Testing net (#0)&#10;I0828 14:26:59.004948  5492 solver.cpp:343]     Test net output #0: accuracy = 0.1&#10;I0828 14:27:03.255168  5492 solver.cpp:214] Iteration 0, loss = 2.28647&#10;I0828 14:27:03.255168  5492 solver.cpp:486] Iteration 0, lr = 0.001&#10;I0828 14:28:30.072227  5492 solver.cpp:214] Iteration 20, loss = 2.34191&#10;I0828 14:28:30.072227  5492 solver.cpp:486] Iteration 20, lr = 0.001&#10;I0828 14:30:00.069166  5492 solver.cpp:214] Iteration 40, loss = 2.30755&#10;I0828 14:30:00.069166  5492 solver.cpp:486] Iteration 40, lr = 0.001&#10;I0828 14:31:27.276870  5492 solver.cpp:214] Iteration 60, loss = 2.39797&#10;I0828 14:31:27.276870  5492 solver.cpp:486] Iteration 60, lr = 0.001&#10;I0828 14:32:55.750267  5492 solver.cpp:214] Iteration 80, loss = 2.29224&#10;I0828 14:32:55.750267  5492 solver.cpp:486] Iteration 80, lr = 0.001&#10;I0828 14:34:18.926513  5492 solver.cpp:294] Iteration 100, Testing net (#0)&#10;I0828 14:37:07.560367  5492 solver.cpp:343]     Test net output #0: accuracy = 0.111875</span><br></pre></td></tr></table></figure></p>
+<p>从这两份log中看出了什么吗? 哈哈，肯定又人看出来了，下节再细说！</p>
+<hr>
+<p>梦想四季于2015/10/21/19:56</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/21/A-journey-of-car/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学车记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Caffe" data-title="深度学习入门记（一）" data-url="http://yoursite.com/2015/10/21/Caffe/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lgbwust"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 梦想四季
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
