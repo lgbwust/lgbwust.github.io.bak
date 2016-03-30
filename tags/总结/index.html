@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ubuntu常用命令及常见问题解决方案 | 梦想四季的博客</title>
+  <title>Tag: 总结 | 梦想四季的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ubuntu如何获取root权限：1sudo -i //输入密码即可切换到root权限">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu常用命令及常见问题解决方案">
-<meta property="og:url" content="http://yoursite.com/2015/10/23/linux/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梦想四季的博客">
+<meta property="og:url" content="http://yoursite.com/tags/总结/index.html">
 <meta property="og:site_name" content="梦想四季的博客">
-<meta property="og:description" content="ubuntu如何获取root权限：1sudo -i //输入密码即可切换到root权限">
-<meta property="og:updated_time" content="2015-10-29T07:36:28.279Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu常用命令及常见问题解决方案">
-<meta name="twitter:description" content="ubuntu如何获取root权限：1sudo -i //输入密码即可切换到root权限">
+<meta name="twitter:title" content="梦想四季的博客">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="梦想四季的博客" type="application/atom+xml">
   
@@ -208,141 +207,57 @@ var _hmt = _hmt || [];
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-linux" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2015/10/23/linux/" class="article-date">
-  	<time datetime="2015-10-23T12:34:24.000Z" itemprop="datePublished">2015-10-23</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/03/30/2016-3-30/" class="archive-article-date">
+  	<time datetime="2016-03-30T07:27:30.000Z" itemprop="datePublished">3月 30</time>
 </a>
-    </div>
+        </div>
+    	 
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      ubuntu常用命令及常见问题解决方案
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/03/30/2016-3-30/">前段时间的小结</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
 	</div>
 
-        
+          
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习/">学习</a>
+	<a class="article-category-link" href="/categories/生活/">生活</a>
 	</div>
 
 
+        </div>
         <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>ubuntu如何获取root权限：<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -<span class="tag">i</span> <span class="comment">//输入密码即可切换到root权限</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>vmware 如何给ubuntu安装vmtools</p>
-<ul>
-<li>复制 vmwaretools.tar.gz并解压</li>
-<li>右键，属性，权限，文件夹访问的权即改为<font color="blue" face="华文新魏"><strong><code>创建和删除文件</code></strong></font></li>
-<li>打开终端，cd到<font color="red">vmware-tools-distrib</font>，输入ls显示所有文件</li>
-<li><p>输入命令</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./vmware-<span class="keyword">install</span>.pl</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>接下来N多的enter，N多的YES，直到你看到—the vmware team就可关闭窗口，然后重新启动就可以焕然一新了。</p>
-</li>
-</ul>
-</li>
-<li><p>当使用 <code>sudo apt-get install</code> 命令时，ubuntu提示“E: 无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系”的解决办法</p>
-<ul>
-<li>从昨天晚上开始，开始尝试在ubuntu下编译caffe，先是安装了一大堆的库，一开始都非常顺利，虽然有一点小小的问题，但是很快解决了，但当我用<br><code>sudo apt-get install libboost-all-dev</code><br>就出错了，提示“E: 无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系”，从昨天晚上，到今天上午都没有解决，百度的一大堆办法，都没有很好的解决。<br>下午看到了这样的一条解决方案：<a href="http://packages.ubuntu.com/wily/amd64/libboost-all-dev/download" target="_blank" rel="external">http://packages.ubuntu.com/wily/amd64/libboost-all-dev/download</a><br>使用 aptitude 或者 synaptic 来安装，首先运行<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install aptitude</span><br><span class="line">sudo aptitude install libboost-<span class="built_in">all</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>我记得昨天晚上好像也用过这条命令，但是没有成功，现在想想可能是因为（Y,n,q）这个输的有误吧。<br>好了，就这么多！<br>2015/10/29日于lab</p>
-</li>
-</ul>
-
-      
-    </div>
-    
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/10/24/hexo-blog-issues/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          hexo博客问题解决方案
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/10/23/utils/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一些小工具</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<div class="share">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到：</span>
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="linux" data-title="ubuntu常用命令及常见问题解决方案" data-url="http://yoursite.com/2015/10/23/linux/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"lgbwust"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 </div>
       <footer id="footer">
@@ -379,9 +294,9 @@ var _hmt = _hmt || [];
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false
 	}
